@@ -1,4 +1,7 @@
-. posh-git.profile.ps1
+$powershellPath = (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
+Push-Location $powershellPath
+
+. (Join-Path $powershellPath 'posh-git.profile.ps1')
 
 function LoadSolution {
     $matchingFiles = Get-ChildItem (Get-Location).Path *.sln
@@ -40,3 +43,5 @@ Append-Path '.'
 
 # Delete the stupid CURL alias
 rm alias:curl -ea SilentlyContinue
+
+Pop-Location

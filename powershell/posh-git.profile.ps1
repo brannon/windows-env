@@ -1,7 +1,5 @@
 $powershellPath = (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
 
-Push-Location $powershellPath
-
 # Load posh-git module from current directory
 Import-Module (Join-Path $powershellPath 'posh-git')
 
@@ -26,9 +24,5 @@ function prompt {
     return "[$pathPrompt] "
 }
 
-Enable-GitColors
-
 $GitPromptSettings.BeforeText = '['
 $GitPromptSettings.AfterText = ']'
-
-Pop-Location
