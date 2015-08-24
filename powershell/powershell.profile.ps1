@@ -18,7 +18,7 @@ function LoadSolution {
 Set-Alias -Name sln -Value LoadSolution
 
 function Sublime($path) {
-    & "C:\Program Files\Sublime Text 2\sublime_text.exe" $path
+    & "C:\bin\SublimeText\sublime_text.exe" $path
 }
 
 Set-Alias -Name slime -Value Sublime
